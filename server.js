@@ -7,6 +7,7 @@ const userMessage = require('./Models/MessageModel')
 const RegisterUser = require('./Models/UserModel')
 const jwt = require('jsonwebtoken');
 const middleware = require('./middleware');
+app.use(express.static('TodoApp/Public'))
 app.use(express.json())
 mongoose.connect('mongodb+srv://gangadhar:gangadhar@cluster0.lq9zrqs.mongodb.net/?retryWrites=true&w=majority').then(
     () => console.log('DB Connected')
@@ -44,7 +45,7 @@ app.delete('/delete/:id', async (req, res) => {
         console.log(err)
     }
 })
-app.put('/update/:id', async (req, res) => {
+app.put('/update/:id', async (req) => {
     const { todo, id } = req.body;
     try {
         const result = await Todo.updateOne(

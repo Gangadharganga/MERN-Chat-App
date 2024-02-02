@@ -3,7 +3,13 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Card, CardBody, CardSubtitle, CardText, CardTitle } from 'reactstrap'
 import moment from 'moment';
+import io from 'socket.io-client';
+const socket = io('http://localhost:5000')
 const Myprofile = () => {
+  useEffect(()=>{
+
+    socket.emit('message','Hiiiiii')
+  },[])
   const [data, setData] = useState(null)
   const [text, setText] = useState('')
   const [messages, setMessages] = useState([null])

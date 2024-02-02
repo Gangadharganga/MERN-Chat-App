@@ -1,16 +1,13 @@
-
 import './App.css'
-
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {  Navbar, NavbarBrand } from 'reactstrap';
+import { Navbar, NavbarBrand } from 'reactstrap';
 import Myprofile from './components/Myprofile';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Login';
 import Register from './components/Register';
 import Contact from './components/Contact';
 function App() {
-
   return (
     <>
       <Navbar
@@ -31,26 +28,17 @@ function App() {
           <a href='/myprofile' >
             Myprofile
           </a>
-
-
         </div>
       </Navbar>
       {/* <Login /> */}
-     
-
       <Router>
         <div>
           {/* Navigation links */}
-
-
-
-
-
           <Routes>
-          <Route path="/" exact element={<Register/>} />
-            <Route path="/login" element={<Login/>} />
-            <Route path="/myprofile" element={<Myprofile/>} />
-            <Route path="/contacts" element={<Contact/>} />
+            <Route path="/" exact element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/myprofile" element={<Myprofile />} />
+            <Route path="/contacts" element={<Contact />} />
           </Routes>
         </div>
       </Router>
